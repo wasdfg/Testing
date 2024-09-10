@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "2edae172-52e0-4e8f-a68b-443f4f15d1e4",
+		"name": "Naver api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38236903"
+	},
+	"item": [
+		{
+			"name": "https://openapi.naver.com/v1/search/blog.json?query=coffee&sort=date",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Naver-Client-Id",
+						"value": "{{ClientId}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Naver-Client-Secret",
+						"value": "{{ClientSecret}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://openapi.naver.com/v1/search/blog.json?query=coffee&sort=date",
+					"protocol": "https",
+					"host": [
+						"openapi",
+						"naver",
+						"com"
+					],
+					"path": [
+						"v1",
+						"search",
+						"blog.json"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "coffee"
+						},
+						{
+							"key": "sort",
+							"value": "date"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://openapi.naver.com/v1/datalab/search?startDate=2024-09-01&endDate=2024-09-10&timeUnit=date&keywordGroups=1&keywordGroups.groupName=전자기기&keywordGroups.keywords=노트북",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Naver-Client-Id",
+						"value": "{{ClientId}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Naver-Client-Secret",
+						"value": "{{ClientSecret}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startDate\": \"2024-09-01\",\r\n  \"endDate\": \"2024-09-10\",\r\n  \"timeUnit\": \"date\",\r\n  \"keywordGroups\": [\r\n    {\r\n      \"groupName\": \"전자기기\",\r\n      \"keywords\": [\"노트북\"]\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://openapi.naver.com/v1/datalab/search?startDate=2024-09-01&endDate=2024-09-10&timeUnit=date&keywordGroups=1&keywordGroups.groupName=전자기기&keywordGroups.keywords=노트북",
+					"protocol": "https",
+					"host": [
+						"openapi",
+						"naver",
+						"com"
+					],
+					"path": [
+						"v1",
+						"datalab",
+						"search"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2024-09-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2024-09-10"
+						},
+						{
+							"key": "timeUnit",
+							"value": "date"
+						},
+						{
+							"key": "keywordGroups",
+							"value": "1"
+						},
+						{
+							"key": "keywordGroups.groupName",
+							"value": "전자기기"
+						},
+						{
+							"key": "keywordGroups.keywords",
+							"value": "노트북"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
